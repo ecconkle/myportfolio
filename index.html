@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Page">
+    <meta name="author" content="Emma Conkle">
+    <meta name="keywords" content="journalism, environmental journalism, science journalism, reporting, media">
+    <title>Emma Conkle - Journalism Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Noto Serif', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Abril Fatface', serif;
+        }
+        
+        /* Focus styles for accessibility */
+        *:focus {
+            outline: 2px solid #836EAA;
+            outline-offset: 2px;
+        }
+        
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #B6ACD1;
+            color: #ffffff;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* Header and Navigation */
+        header {
+            background: #ffffff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #B6ACD1;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: #836EAA;
+        }
+  /* Styling for project links */
+.project-links a {
+    color: #836EAA;
+    text-decoration: none;
+}
+        
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #B6ACD1;
+        }
+        
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+        
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #B6ACD1;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #B6ACD1;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #B6ACD1;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Hero/About Section */
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .headshot {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+        }
+        
+        .role {
+            font-size: 1.2rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .bio {
+            text-align: left;
+            max-width: 600px;
+        }
+        
+        /* Work Section */
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 350px);
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+        
+        .work-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+        
+        .work-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .work-card h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .work-card h3 a {
+            text-decoration: none;
+            color: #B6ACD1;
+        }
+        
+        .work-card h3 a:hover {
+            color: #836EAA;
+        }
+        
+        .deck {
+            color: #6c757d;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .work-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .role-badge {
+            background: #836EAA;
+            color: #ffffff;
+            padding: 0.25rem 0.5rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        .outlet-date {
+            color: #6c757d;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background: #e9ecef;
+            color: #333;
+            padding: 0.25rem 0.5rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background: #f8f9fa;
+        }
+        
+        .project-placeholder {
+            background: #ffffff;
+            border: 2px dashed #e9ecef;
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 2rem;
+            color: #6c757d;
+        }
+        
+        /* Resume Section */
+        .resume-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .resume-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #836EAA;
+            color: #ffffff;
+            padding: 0.75rem 1.0rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .resume-download:hover {
+            background: #B6ACD1;
+        }
+        
+        .skills-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.5rem;
+        }
+        
+        .skills-list li {
+            background: #f8f9fa;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: #B6ACD1;
+            color: #ffffff;
+        }
+        
+        .contact h2 {
+            color: #ffffff;
+            border-bottom-color: #836EAA;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            color: #836EAA;
+        }
+        
+        /* Footer */
+footer {
+    background: #4E2A84;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem;
+    max-width: 1200px;  
+    margin: 0 auto;    
+}
+/*
+    footer {
+            background: #4E2A84;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem;
+        }
+*/
+
+   .footer-content {
+          max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .ai-disclosure {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #e9ecef;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                display: none;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                padding: 4rem 1rem;
+            }
+            
+            section {
+                padding: 2rem 1rem;
+            }
+            
+            .work-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .resume-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .work-card {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <nav>
+            <a href="#" class="logo">Emma Conkle</a>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main id="main-content">
+        <section id="about" class="hero">
+            <div class="hero-content">
+                <img src="file:///Users/econkle/Desktop/pic%201%20copy.JPG" 
+                     alt="Emma Conkle smiles at the National Botanical Gardens in Washington, D.C." 
+                     class="headshot">
+                <div>
+                    <h1>Emma Conkle</h1>
+                    <p class="role">Master's Student in Journalism • Northwestern's Medill School</p>
+                </div>
+                <div class="bio">
+               <p>I am originally from Virginia, and I received a B.A. in English with a minor in Classical Studies from the William & Mary and University of St Andrews Joint Degree Programme. Because of my program, I was able to spend two years at each university and got a joint degree from both. I am passionate about helping bridge the gap between scientists and the public as well as telling stories about conservation and climate issues. I believe it is crucial to help create meaningful connections between communities and the environment through journalism. My hobbies include traveling, hiking, reading and paddleboarding with my dog.</p>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <section id="work">
+            <h2>Selected Work</h2>
+            <div class="work-grid">
+                <article class="work-card">
+                    <h3><a href="https://drive.google.com/file/d/13hYoQreOeuk4Ofyd_8oOJ01jklFIP1Xf/view?usp=sharing" target="_blank">
+                       Spring Hill Rec Center Unveils New Energy Improvements</a></h3>
+                    <p class="deck">Fairfax County Park Authority (FCPA) completed its energy improvement project at Spring Hill Rec Center, which aided Fairfax County in their goal of carbon neutrality.</p>
+                    <div class="work-meta">
+                        <span class="outlet-date">Fairfax County Park Authority's Parktakes Magazine • Fall 2024</span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Science</span>
+                        <span class="tag">Environment</span>
+                        <span class="tag">Local News</span>
+                    </div>
+                </article>
+                
+                <article class="work-card">
+                    <h3><a href="https://drive.google.com/file/d/1PURehn_PCsbG5TJWR0_zEs8bmwHN5WPD/view?usp=sharing" target="_blank">Want to Save Bats? Include Community Conservation Partners</a></h3>
+                    <p class="deck">Dr. Dave Waldien works with community partners to carry out research and craft specific conservation plans for threatened species.</p>
+                    <div class="work-meta">
+                        <span class="outlet-date">William & Mary Science Communication with Dr. Dorothy Ibes • April 2025</span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Conservation</span>
+                        <span class="tag">Science</span>
+                        <span class="tag">Feature</span>
+                    </div>
+                </article>
+                
+                <article class="work-card">
+                    <h3><a href="https://www.st-artmagazine.co.uk/art-culture-1/2024/10/20/travelling-with-friends-make-or-break-your-vacation?rq=conkle" target="_blank">Travelling with Friends: Make or Break Your Vacation </a></h3>
+                    <p class="deck">How to ensure you are travelling with the right friends to the right places.</p>
+                    <div class="work-meta">
+                        <span class="outlet-date">St.Art Magazine • October 2024</span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Travel</span>
+                        <span class="tag">Advice</span>
+                        <span class="tag">University</span>
+                    </div>
+                </article>
+
+
+                </div>
+        </section>
+        
+        <section id="resume">
+            <h2>Resume & Skills</h2>
+            <div class="resume-content">
+                <div>
+                    <h3>View Resume</h3>
+                    <a href="https://drive.google.com/file/d/1ZOq54OFEygJEA-kwZUM7SgW_JYcaIgss/view?usp=sharing" class="resume-download" target="_blank">
+                        View PDF Resume
+                    </a>
+                    <p style="margin-top: 1rem; color: var(--dark-gray);">
+                        Education, work history and additional experience available in PDF format.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3>Key Skills</h3>
+                    <ul class="skills-list">
+                        <li>Environmental Journalism</li>
+                        <li>Travel Writing</li>
+                        <li>Copy-editing and Writing</li>
+                        <li>Oral and Written Communication</li>
+                        <li>Social Media</li>
+                        <li>Collaborative Leadership</li>
+                        <li>Microsoft Office Suite</li>
+                        <li>Google Suite (incl. Analytics)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:emmaconkle2026@u.northwestern.edu" target="_parent">Email Me</a>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <a href="http://www.linkedin.com/in/emma-conkle" target="_blank">LinkedIn</a>
+                </div>
+                </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Emma Conkle. All rights reserved.</p>
+            <p>Last updated: September 2025</p>
+            <div class="ai-disclosure">
+                <p><strong>AI Usage Disclosure:</strong> This portfolio template was created with assistance from Claude AI (Anthropic) for initial HTML/CSS structure and responsive design framework. All content, customization, and editorial decisions remain my own.</p>
+            </div>
+        </div>
+
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            // Update aria-expanded for accessibility
+            const isExpanded = navLinks.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinkItems = document.querySelectorAll('.nav-links a');
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('nav')) {
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+   
+</body>
+</html>
